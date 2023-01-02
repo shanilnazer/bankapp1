@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./register.component.css">
+</head>
+<body>
+    <div class="container mt-3 p-3 rounded">
+        <h1 class="text-center mt-3">Registration</h1>
+        <form (ngSubmit)="register()" [formGroup]=" registerForm">
+            <div class="mt-3 p-3">
+                <input name="uname" formControlName="uname"  type="text" class="form-control" id="uname" placeholder="Username" >   
+              </div>
+              <div *ngIf="this.registerForm.get('uname')?.errors && this.registerForm.get('uname')?.touched">
+                <p class="text-danger">invalid username</p>
+              </div>
+          <div class="mt-3 p-3">
+            <input name="acno" formControlName="acno" type="text" class="form-control" id="acid" placeholder="Account number" >   
+          </div>
+          <div *ngIf="this.registerForm.get('acno')?.errors && this.registerForm.get('acno')?.touched">
+            <p class="text-danger">invalid acno</p>
+          </div>
+          <div class="mt-3 p-3">
+            <input name="psw" formControlName="psw" type="password" class="form-control" id="pid" placeholder="Password">
+          </div>
+          <div *ngIf="this.registerForm.get('psw')?.errors && this.registerForm.get('psw')?.touched">
+            <p class="text-danger">invalid password</p>
+          </div>
+          <div class="mt-3 p-3 text-center"><button  type="submit" class="btn btn-success">Signup</button></div>
+        </form>
+      </div>
+</body>
+</html>

@@ -1,0 +1,14 @@
+h4{
+    font-size: 18px;
+
+}
+.container{
+    /* background-image: linear-gradient(); */
+    background:transparent;
+    width: 500px;
+    height: 120px;
+    border-radius: 20px;
+    box-shadow: 0 0 60px #000;
+   
+}
+

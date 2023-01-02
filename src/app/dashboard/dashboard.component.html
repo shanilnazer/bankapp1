@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>bankapp</title>
+  <link rel="stylesheet" href="./dashboard.component.css">
+</head>
+<body>
+  <h1 class="text-white p-4">Welcome {{user}}</h1>
+  <h4 class="text-white p-4"> {{dateandtime  | date : 'short' }}</h4>
+  <a class="text-white p-4 " routerLink="/transaction">View transaction history</a>
+  <div class="p-4">
+    <button (click)="logout()" class="btn btn-outline-info">logout</button>
+  </div>
+
+  <div class="p-4">
+    <button (click)="deleteconfirm()" class="btn btn-outline-danger">Delete</button>
+  </div>
+  <app-deleteconfirm [item]="acno"></app-deleteconfirm>
+  
+  <div [ngClass]="acno?'style':''"  class="container mt-3 p-3 rounded">
+    <h1 class="text-center mt-3">DEPOSIT AMOUNT</h1>
+    <form (ngSubmit)="Deposit()" [formGroup]="depositForm">
+      <div class="mt-3 p-3">
+        <input name="acno" formControlName="acno" type="text" class="form-control" id="acid" placeholder="Account number" >   
+      </div>
+      <div class="mt-3 p-3">
+        <input name="psw" formControlName="psw" type="password" class="form-control" id="pid" placeholder="Password">
+      </div>
+      <div class="mt-3 p-3">
+        <input name="amnt" formControlName="amnt" type="number" class="form-control" id="amntid" placeholder="Amount">
+      </div>
+      <div class="mt-3 p-3 text-center"><button type="submit" class="btn btn-success">Deposit</button></div>
+    </form>
+  </div>
+
+  <div [ngClass]="acno?'style':''"  class="container mt-3 p-3 rounded">
+    <h1 class="text-center mt-3">WITHDRAW AMOUNT</h1>
+    <form (ngSubmit)="Withdraw()" [formGroup]="withdrawForm">
+      <div class="mt-3 p-3">
+        <input name="acno1" formControlName="acno1" type="text" class="form-control" id="acid1" placeholder="Account number" >   
+      </div>
+      <div class="mt-3 p-3">
+        <input name="psw1" formControlName="psw1" type="password" class="form-control" id="pid1" placeholder="Password">
+      </div>
+      <div class="mt-3 p-3">
+        <input name="amnt1" formControlName="amnt1" type="number" class="form-control" id="amntid1" placeholder="Amount">
+      </div>
+      <div class="mt-3 p-3 text-center"><button type="submit" class="btn btn-danger">Withdraw</button></div>
+    </form>
+
+  </div>
+
+</body>
+</html>

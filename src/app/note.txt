@@ -1,0 +1,113 @@
+1-DATA BINDING IN ANGULAR
+-----------------------
+
+ts refers to component
+html refers to view
+
+1-One way binding
+
+    1.1 component to view
+
+        1.1.1 string interpollation {{}}
+        1.1.2 property binding  [property]="value"
+
+    1.2 view to component
+        1.2.1 event binding              (eventname)="method name()"
+        1.2.2 event binding using $event (eventname)="methodname($event)"
+        1.2.3 event binding using template rendering variable  #variable
+
+2-Two way binding
+
+    2.1 ngmodel         [(ngmodel)]="value"     (easyone)
+                        FormsModule
+
+
+2-REDIRECTION IN ANGULAR
+-------------------------
+
+navigateByUrl     -  method used to REDIRECTION
+
+Router            -  class
+
+AppRoutingModule  - module (aleady present in app module)
+
+
+3-DEPENDENCY INJECTION
+---------------------
+
+-to use a method of class in another class
+-in constructor
+
+-steps:
+    access specifier - public/private
+    variable
+    class name
+    
+    example:    private variable:Classname  (private router:Router)
+
+
+ANGULAR SERVICES  - To manage DOM(document object tree) in angluar
+----------------
+
+ng g s servicename - command used to generate services
+
+Angular directives
+------------------
+1-structural directive - to handle structured datas in view of component 
+
+    -ngFor  -can directively apply in htm to access elements from array
+
+    -ngIf 
+
+2-Component directive
+
+
+Form Validation in Angular
+--------------------------
+
+we can create forms in two ways
+    
+    1.Template Driven Form
+    
+    2.Model Driven Form
+            -Reactive Form
+            ---------------
+
+            ReactiveFormsModule   -module used to create model forms
+
+            FormBuilder           -class of ReactiveFormsModule
+
+                    -group,array,control
+
+        Validate Model Form
+        -------------------
+
+        validator - a class in angular it includes methods for apply validation
+
+        -access errors in validators rule
+
+                this.registerForm.get('uname')?.error
+                                -valid   -empty response
+
+                                -invalid -content
+
+Local Storage in Angular
+------------------------
+
+
+-store     localStorage.setItem()
+-access    localStorage.getItem()
+-delete    localStorage.removeItem()
+
+
+Parent Child Components communication in angluar
+------------------------------------------------
+
+
+
+
+Date in Angular
+---------------
+Date    - class
+
+-createan objectof class Date to access Date and Time

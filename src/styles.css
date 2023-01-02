@@ -1,0 +1,10 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+    background-image: url("./assets/pexels-bob-price-764880.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+}
+.style{
+    opacity: 0;
+}
+    

@@ -1,0 +1,18 @@
+body{
+    padding-top:100px;
+    
+}
+h1{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: rgb(255, 255, 255);
+
+}
+.container{
+    /* background-image: linear-gradient(); */
+    background:transparent;
+    width: 500px;
+    height: 400px;
+    border-radius: 20px;
+    box-shadow: 0 0 60px #000;
+}
+

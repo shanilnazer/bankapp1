@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>bankapp</title>
+  <link rel="stylesheet" href="./login.component.css">
+</head>
+<body>
+  <div class="container mt-3 p-3 rounded">
+    <h1 class="text-center mt-3">AMERICAN BANK</h1>
+    <form (ngSubmit)="login()" [formGroup]="loginForm">
+      <div class="mt-3 p-3">
+        <input name="acno" formControlName="acno" type="text" class="form-control" id="acid" [placeholder]="data" >   
+      </div>
+      <div *ngIf="this.loginForm.get('acno')?.errors && this.loginForm.get('acno')?.touched">
+        <p class="text-danger">invalid acno</p>
+      </div>
+      <div class="mt-3 p-3">
+        <input name="psw" formControlName="psw" type="password" class="form-control" id="pid" placeholder="Password">
+      </div>
+      <div *ngIf="this.loginForm.get('psw')?.errors && this.loginForm.get('psw')?.touched">
+        <p class="text-danger">invalid password</p>
+      </div>
+      <div class="mt-3 p-3 text-center"><button type="submit"  class="btn btn-success">login</button></div>
+    </form>
+    <p class="mt-3 pb-3 text-center text-white">new user? <a routerLink="register">register</a></p>
+  </div>
+  <div><br>
+    <h1 style="color: rgba(255, 255, 255, 0.712);" class="text-center">{{aim}}</h1>
+</div>
+ 
+</body>
+</html>
